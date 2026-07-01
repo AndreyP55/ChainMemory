@@ -2,7 +2,8 @@
 
 **Prompt:** see [`prompt.md`](prompt.md) (copy-pasteable, works in any MCP client with the `memwal` tools).
 
-**Agent ID:** `<fill in your Walrus Memory accountId after memwal_login>`
+**Agent ID:** `0x855f05cd1242351e3fb33abb9b2fc3985a1398bd367371e328dcc04fb5f4aee2`
+(10 encrypted blobs on Walrus mainnet — see [`evidence/blobs.md`](evidence/blobs.md))
 
 **Problem statement (2–5 sentences):**
 Crypto researchers re-research the same token from scratch every session — chain
