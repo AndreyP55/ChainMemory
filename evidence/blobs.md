@@ -1,6 +1,6 @@
 # Evidence — Walrus mainnet blobs
 
-Real memories written by MemoryScout to Walrus mainnet during the demo.
+Real memories written by ChainMemory to Walrus mainnet during the demo.
 Each row is filled in as we run `memwal_remember` (blob_id returned by the relayer).
 
 | # | Namespace | Fact (short) | Blob ID |
@@ -13,4 +13,3 @@ Each row is filled in as we run `memwal_remember` (blob_id returned by the relay
 | 6 | synthesis | _tbd_        | _tbd_   |
 
 _Account ID (Agent ID): `<tbd after login>`_
-</content>

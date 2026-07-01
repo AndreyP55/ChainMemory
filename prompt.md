@@ -1,4 +1,4 @@
-# The Prompt — MemoryScout
+# The Prompt — ChainMemory
 
 Copy this into your agent's system prompt / rules in any MCP client that has the
 Walrus Memory (`memwal`) tools connected.
@@ -63,4 +63,3 @@ you already know and what previously burned you.
 - NEVER repeat a pattern stored in `mistakes`.
 - If `memwal_recall` returns empty, run `memwal_restore` for that namespace, then retry.
 ```
-</content>
