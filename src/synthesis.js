@@ -7,7 +7,7 @@ import { getClient, RESEARCH_NAMESPACES, NAMESPACES } from "./client.js";
 const RELEVANT = 0.7; // distance below this = relevant (per SKILL.md guidance)
 
 async function main() {
-  const topic = process.argv[2] ?? "is this token safe to research";
+  const topic = process.argv[2] ?? "does remote work increase team productivity";
   console.log(`\n=== ChainMemory synthesis for: "${topic}" ===\n`);
 
   // 1. Recall across all four research namespaces.
@@ -40,22 +40,22 @@ async function main() {
   }
   if (flagged === 0) console.log("  (none)");
 
-  // 4. Check the mistakes namespace before concluding.
-  const mistakesClient = getClient(NAMESPACES.MISTAKES);
-  const mistakes = await mistakesClient.recall({ query: topic, namespace: NAMESPACES.MISTAKES, limit: 5 });
-  console.log("\nMISTAKES CHECK (patterns that burned us before):");
-  if (mistakes.total === 0) {
-    console.log("  (no prior mistakes on record)");
+  // 4. Check the corrections namespace before concluding.
+  const correctionsClient = getClient(NAMESPACES.CORRECTIONS);
+  const corrections = await correctionsClient.recall({ query: topic, namespace: NAMESPACES.CORRECTIONS, limit: 5 });
+  console.log("\nCORRECTIONS CHECK (conclusions I was corrected on before):");
+  if (corrections.total === 0) {
+    console.log("  (no prior corrections on record)");
   } else {
-    for (const m of mistakes.results) console.log(`  ✗ ${m.text}`);
+    for (const m of corrections.results) console.log(`  ✗ ${m.text}`);
   }
 
   // 5. Store ONE distilled synthesis note — the conclusion only, never raw passes.
   const note =
     `synthesis for "${topic}": ${sourcesWithHits.length}/4 sources aligned, ` +
     `${flagged} single-source claim(s) flagged unverified, ` +
-    `${mistakes.total} past-mistake pattern(s) applied. ` +
-    `Verdict: proceed only after simulating a sell from a fresh wallet.`;
+    `${corrections.total} past correction(s) applied. ` +
+    `Verdict: hold conclusions to sample size and source independence.`;
   const synthClient = getClient(NAMESPACES.SYNTHESIS);
   const stored = await synthClient.rememberAndWait(note, NAMESPACES.SYNTHESIS, { timeoutMs: 60_000 });
   console.log(`\nStored synthesis to Walrus mainnet — blob ${stored.blob_id}\n`);

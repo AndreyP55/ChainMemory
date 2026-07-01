@@ -1,6 +1,6 @@
-// Session start: before researching anything, load synthesis + mistakes so the
-// agent continues instead of starting from zero. This is the "never start from
-// zero" half of ChainMemory.
+// Session start: before researching anything, load synthesis + corrections so
+// the agent continues instead of starting from zero. This is the "never start
+// from zero" half of ChainMemory.
 import { getClient, NAMESPACES } from "./client.js";
 
 async function briefing(ns, query, label) {
@@ -17,7 +17,7 @@ async function briefing(ns, query, label) {
 async function main() {
   console.log("=== ChainMemory session start — loading memory from Walrus mainnet ===");
   await briefing(NAMESPACES.SYNTHESIS, "prior conclusions", "WHAT I ALREADY CONCLUDED");
-  await briefing(NAMESPACES.MISTAKES, "patterns to avoid", "WHAT BURNED ME BEFORE");
+  await briefing(NAMESPACES.CORRECTIONS, "past corrections", "WHAT I WAS CORRECTED ON");
   console.log("\nReady. Research continues from here, not from zero.\n");
 }
 

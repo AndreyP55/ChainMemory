@@ -3,7 +3,7 @@
 import { getClient, NAMESPACES } from "./client.js";
 
 async function main() {
-  const ns = process.argv[2] ?? NAMESPACES.ONCHAIN;
+  const ns = process.argv[2] ?? NAMESPACES.ACADEMIC;
   const query = process.argv[3] ?? "everything";
 
   const client = getClient(ns);

@@ -6,19 +6,21 @@ Each blob is encrypted (SEAL) and stored on Walrus, scoped to the account below.
 **Account ID (Agent ID):** `0x855f05cd1242351e3fb33abb9b2fc3985a1398bd367371e328dcc04fb5f4aee2`
 **Relayer:** `https://relayer.memory.walrus.xyz` (mainnet / production)
 
+Demo topic: *"Does remote work increase team productivity?"*
+
 | # | Namespace | Fact (short) | Blob ID |
 |---|-----------|--------------|---------|
-| 1 | onchain   | deployer funded LP with 4.2 ETH, LP locked 90d via UNCX | `q_M4-hSxz2HrTJtcNXOymTvu6Jbme94igf1Du4QBrz8` |
-| 2 | onchain   | top-10 holders control 38%, no single wallet > 6% | `dbRPIsaiFm2rBV6XYQVaHMeFf1pI0Iw5kygp6FVgk_0` |
-| 3 | social    | 3 mid-tier CT accounts posted organically, no shill language | `-E1MYiWbBarg7LIsIPUzz47E-UfaRfpQ9MFXeVaE5EI` |
-| 4 | social    | founder doxxed on a Space, matches a prior shipped project | `qGVi0ThGjc5Ncu_0ASGPlrLSPwurjF-OyduJ8YlGBDQ` |
-| 5 | narrative | fits 'onchain AI agent' sector rotation, peers up 3-5x | `Lz2b54iYJa3PYaZn3zjsYKjbyIutAYaZSnYaEDNAR5M` |
-| 6 | raw-data  | mcap $1.8M, 24h vol $420k, 7,100 holders, +26% since launch | `RDBirOKvaubZQ1aV7MFt_J0knbFQ81v_CGIeDRL0-hI` |
-| 7 | raw-data  | SINGLE-SOURCE: unverified screenshot claims tier-1 CEX listing | `ogr9oKSZx-PsVzGxDp9lc5dGLKcNwydrn_TBE2ExpIk` |
-| 8 | mistakes  | PORK: owner blacklist + LP rug on minute 4 | `XTvZIX45Hl3qqAnl7Wu2pfYMdVW7RmMnP02HCHIvFWs` |
-| 9 | mistakes  | BABYuPEG: transferFrom backdoor, honeypot checkers miss it | `wTbW_rzLTexxouupSZ1Iq8MnvmfVZ-2bSxXy_-_CzBQ` |
+| 1 | academic   | meta-analysis of 40 studies: small positive effect, high variance | `z8dKxXTcYcZ0pciMTDRUHS71bna5wRh3moBPYfeyXIs` |
+| 2 | academic   | strongest for focused individual work, weakest for cross-team innovation | `QG3fjjpkmJTpSZ_EXbFR2e7SPerA2rERRxBUlsAc-Gg` |
+| 3 | industry   | large-firm 2025 reports: output stable-to-up after remote-first | `vvzc_8CcMfSLYi1bImZWFYUbb4QeWiDyMP872TKOu9Y` |
+| 4 | industry   | manager surveys: lower perceived collaboration despite stable output | `0ttYhCHJ959txVrhyaRw1aONGaCDGl0MXxHcFfXP7uY` |
+| 5 | contrarian | critics: gains come from unpaid overtime, not real efficiency | `0cmLyqPQxvugHrvVfMe1KzNASHENgenDEYNRgcVfZmk` |
+| 6 | raw-data   | measured: PRs flat, meeting hours -18%, attrition -12% | `k0wZUoSy6b4JrBz705gQ0bB1KqNsIWBjKDHikRO0rww` |
+| 7 | raw-data   | SINGLE-SOURCE: unverified LinkedIn screenshot claims 40% jump | `bjFpqgVmwVMfM5wqee8cvIPBPzsQPcCSF4-XJyLbMB4` |
+| 8 | corrections | called remote 'strictly better' from self-selected sample; lesson learned | `f96nVg6pCyoVB8ix-agkG7NiegWVUn7ti0A90kRY4nk` |
+| 9 | corrections | treated a retracted viral stat as fact; flag single-source until corroborated | `yHN2uOvbYEhP3D1ctiTEdeRFuwd8DaVXkDB_J8x5TJI` |
 
-**Synthesis blob** (written by `npm run synthesis "is this token safe to research"`):
-`k6Hz0-pn0DkNsZc6XOxuuHRkKOXMAQRWeHf48981ZVY` — namespace `synthesis`, distilled verdict only.
+**Synthesis blob** (written by `npm run synthesis "does remote work increase team productivity"`):
+`ncpKNSXVCvbvrS1bq3Mb3i8fqL28pAucxQRGoon21lI` — namespace `synthesis`, distilled verdict only.
 
 Total: **10 encrypted blobs on Walrus mainnet**, all recallable and verifiable via the account above.

@@ -3,19 +3,19 @@ import "dotenv/config";
 import { MemWal } from "@mysten-incubation/memwal";
 
 export const NAMESPACES = {
-  ONCHAIN: "onchain",
-  SOCIAL: "social",
-  NARRATIVE: "narrative",
+  ACADEMIC: "academic",
+  INDUSTRY: "industry",
+  CONTRARIAN: "contrarian",
   RAW: "raw-data",
   SYNTHESIS: "synthesis",
-  MISTAKES: "mistakes",
+  CORRECTIONS: "corrections",
 };
 
 // The four research namespaces the jam's seed example asks for.
 export const RESEARCH_NAMESPACES = [
-  NAMESPACES.ONCHAIN,
-  NAMESPACES.SOCIAL,
-  NAMESPACES.NARRATIVE,
+  NAMESPACES.ACADEMIC,
+  NAMESPACES.INDUSTRY,
+  NAMESPACES.CONTRARIAN,
   NAMESPACES.RAW,
 ];
 
@@ -35,19 +35,20 @@ export function getClient(namespace = NAMESPACES.SYNTHESIS) {
   });
 }
 
-// Demo research on one token, split across namespaces exactly as the prompt dictates.
-// Note: "onlyOne" facts are deliberately confirmed by a single namespace so the
-// synthesis pass can flag them as SINGLE-SOURCE / UNVERIFIED.
+// Demo research on one general question, split across namespaces exactly as the
+// prompt dictates. Topic: "Does remote work increase team productivity?"
+// The "raw-data" screenshot fact is confirmed by a single namespace only, so the
+// synthesis pass can flag it as SINGLE-SOURCE / UNVERIFIED.
 export const SEED = [
-  { ns: NAMESPACES.ONCHAIN, text: "onchain: deployer wallet funded LP with 4.2 ETH, LP locked 90 days via UNCX. (confidence 0.9)" },
-  { ns: NAMESPACES.ONCHAIN, text: "onchain: top-10 holders control 38% of supply, no single wallet > 6%. (confidence 0.85)" },
-  { ns: NAMESPACES.SOCIAL, text: "social: 3 mid-tier CT accounts (15-40k) posted organically, no paid-shill language. (confidence 0.6)" },
-  { ns: NAMESPACES.SOCIAL, text: "social: founder doxxed on a Twitter Space, matches a prior shipped project. (confidence 0.7)" },
-  { ns: NAMESPACES.NARRATIVE, text: "narrative: fits the 'onchain AI agent' sector rotation, comparable to peers up 3-5x. (confidence 0.65)" },
-  { ns: NAMESPACES.RAW, text: "raw-data: mcap $1.8M, 24h vol $420k, 7,100 holders, price +26% since launch. (confidence 0.95)" },
+  { ns: NAMESPACES.ACADEMIC, text: "academic: meta-analysis of 40 studies finds a small positive effect on productivity, high variance by role. (confidence 0.8)" },
+  { ns: NAMESPACES.ACADEMIC, text: "academic: the effect is strongest for focused individual work, weakest for cross-team innovation. (confidence 0.75)" },
+  { ns: NAMESPACES.INDUSTRY, text: "industry: several large-firm 2025 reports show output stable-to-up after going remote-first. (confidence 0.65)" },
+  { ns: NAMESPACES.INDUSTRY, text: "industry: manager surveys report lower perceived collaboration despite stable measured output. (confidence 0.6)" },
+  { ns: NAMESPACES.CONTRARIAN, text: "contrarian: critics argue apparent gains come from unpaid overtime, not real efficiency. (confidence 0.6)" },
+  { ns: NAMESPACES.RAW, text: "raw-data: measured — commits/PRs flat, meeting hours -18%, voluntary attrition -12% after remote. (confidence 0.9)" },
   // SINGLE-SOURCE signal: appears only in raw-data, must be flagged as unverified.
-  { ns: NAMESPACES.RAW, text: "raw-data: an unverified screenshot claims a tier-1 CEX listing next week. (confidence 0.25)" },
-  // negative knowledge from real past incidents (authentic, not invented).
-  { ns: NAMESPACES.MISTAKES, text: "mistakes: PORK looked clean but owner had a blacklist function + LP rug on minute 4. Pattern: always simulate a sell from a fresh wallet before calling safe." },
-  { ns: NAMESPACES.MISTAKES, text: "mistakes: BABYuPEG had a transferFrom backdoor; deployer moved tokens with no approve. Pattern: check for non-standard transferFrom, honeypot checkers miss it." },
+  { ns: NAMESPACES.RAW, text: "raw-data: an unverified LinkedIn screenshot claims a 40% productivity jump, with no methodology. (confidence 0.2)" },
+  // negative knowledge — past conclusions the agent was corrected on.
+  { ns: NAMESPACES.CORRECTIONS, text: "corrections: I once called remote work 'strictly better' from a single vendor survey. Reality: the sample was self-selected. Lesson: weight sample size and source independence." },
+  { ns: NAMESPACES.CORRECTIONS, text: "corrections: I treated a viral stat as fact; it was later retracted. Lesson: flag single-source claims as unverified until corroborated." },
 ];
