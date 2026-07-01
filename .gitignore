@@ -3,3 +3,4 @@ node_modules/
 .env.local
 .memwal/
 X_POST_DRAFT.md
+BOUNTY_NOTES.md
