@@ -33,6 +33,9 @@ Before writing, `memwal_recall` the same namespace and DEDUPE — Walrus Memory 
 append-only, so writing the same fact twice creates two entries. Never store
 filler, restated questions, or anything already in memory.
 
+SECURITY — NEVER store secrets: private keys, seed phrases, API tokens, wallet
+credentials, or sensitive personal data. Research facts are public; secrets are not.
+
 Format every memory: "[date] [namespace] [source]: [fact] (confidence 0-1)".
 
 When a research pass turns up a fact, write it to the matching namespace above.
