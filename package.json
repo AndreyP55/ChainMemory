@@ -1,7 +1,7 @@
 {
   "name": "chainmemory",
   "version": "1.0.0",
-  "description": "A crypto-research agent with persistent Walrus Memory — 4 research namespaces, cross-source synthesis with single-source flagging, and a mistakes namespace.",
+  "description": "A disciplined research agent with persistent Walrus Memory — 4 research namespaces, cross-source synthesis with single-source flagging, and a corrections namespace.",
   "type": "module",
   "license": "MIT",
   "scripts": {
